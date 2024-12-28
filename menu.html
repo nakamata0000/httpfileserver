@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>管理コンソールメニュー</title>
+</head>
+<body>
+<h3>ネットワークサーバー管理コンソールメニュー</h3>
+<hr>
+<p><a href="index.html">ログアウト</a></p>
+<hr>
+最終ログイン：
+<span id="view_time"></span>
+
+<script type="text/javascript">
+document.getElementById("view_time").innerHTML = getNow();
+
+function getNow() {
+	var now = new Date();
+	var year = now.getFullYear();
+	var mon = now.getMonth()+1; //１を足すこと
+	var day = now.getDate();
+	var hour = now.getHours();
+	var min = now.getMinutes();
+	var sec = now.getSeconds();
+
+	//出力用
+	var s = year + "年" + mon + "月" + day + "日" + hour + "時" + min + "分" + sec + "秒"; 
+	return s;
+}
+</script>
+<hr>
+   <button onclick="window.location.href='https://192.168.10.102:8080/rss/'">ログデータ取得</button>
+      <button onclick="window.location.href='https://192.168.10.102:8080/webdav/'">サーバー構成</button>
+       <button onclick="window.location.href='https://192.168.10.102:8080/webdav/'">サーバー停止</button>
+</body>
+
+</html>

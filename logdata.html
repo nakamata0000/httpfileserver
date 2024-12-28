@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>logdata</title>
+</head>
+<body>
+   <title>文字列の自動表示</title>
+    <style>
+        #display-text {
+            white-space: pre-wrap; /* 改行を許可 */
+            word-wrap: break-word; /* 単語の途中で改行する */
+            width: 100%; /* 幅を100%に設定 */
+            border: 1px solid #000; /* ボーダーを追加（見やすさのため） */
+            padding: 10px; /* パディングを追加 */
+            overflow: hidden; /* はみ出した部分は隠す */
+        }
+    </style>
+</head>
+<body>
+
+    <div id="display-text"></div>
+
+    <script>
+        const text = "get 192.168.10.107"; // 表示する文字列
+        const displayElement = document.getElementById("display-text");
+
+        function displayForever() {
+            // 文字列を現在のテキストに追加
+            displayElement.textContent += text;
+            // 再帰的に自分自身を呼び出す
+            setTimeout(displayForever, 33); // 1秒ごとに追加
+        }
+
+        // 表示を開始
+        displayForever();
+    </script>
+</body>
+
+</html>
